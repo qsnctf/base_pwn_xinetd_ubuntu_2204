@@ -1,0 +1,14 @@
+version: "3"
+services:
+  challenges:
+    build: .
+    image: qsnctf/base_pwn_xinetd_ubuntu_2204
+    ports:
+      - "10000:10000"
+    environment:
+      - FLAG=qsnctf{flag}
+      # 一般难不需要启动，这个是抓流量包的，如果有需要可以取消这个。
+#      - TCPDUMP_ENABLE=1
+    # 一般难不需要启动，这个是抓流量包的，如果有需要可以取消这个。
+#    volumes:
+#      - ./tcpdump:/var/lib/tcpdump
